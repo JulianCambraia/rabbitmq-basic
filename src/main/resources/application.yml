@@ -1,0 +1,20 @@
+server:
+  port: 9990
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+
+app:
+  rabbitmq:
+    direct-exchange: my.direct
+    request-queue: my.direct.request
+    response-queue: my.direct.response
+    retry-attempts: 3
+    backoff-interval: 10000
+    backoff-multiplier: 2
+    backoff-max-interval: 10000
+    concurrent-consumers: 5
+    max-concurrent-consumers: 10
+
